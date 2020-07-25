@@ -1,0 +1,54 @@
+{
+    "name": "processton/auth-client",
+    "description": "Client End Authentication Validation",
+    "keywords": [
+        "processton",
+        "auth-client"
+    ],
+    "homepage": "https://github.com/processton/auth-client",
+    "license": "GPL-2.0-or-later",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ahmad Faryab Kokab",
+            "email": "ahmadkokab@processton.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Processton\\AuthClient\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Processton\\AuthClient\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Processton\\AuthClient\\AuthClientServiceProvider"
+            ],
+            "aliases": {
+                "AuthClient": "Processton\\AuthClient\\AuthClientFacade"
+            }
+        }
+    }
+}
